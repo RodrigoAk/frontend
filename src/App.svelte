@@ -12,7 +12,13 @@
 	const ws = new WebSocket("ws://localhost:8765");
 
 	ws.onopen = function() {
-		messages = [...messages, 'Bem-vindo à sala de chat!'];
+		messages = [...messages, 'Bem-vindo a sala de chat!'];
+        messages = [...messages,
+            "Comandos:",
+            "/nome SeuNome: para definir seu nome",
+            "/pv NomeDestinatario: para enviar uma mensagem privada",
+            "/dc: Para desconectar do chat"
+        ];
 	};
 
 	ws.onmessage = function(e) {
